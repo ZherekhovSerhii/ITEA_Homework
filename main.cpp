@@ -8,16 +8,16 @@ const short FOUR = 4;
 
 int main(int argc, char const argv[]) {
 
-	constexpr int32_t low_lim = std::numeric_limits<int32_t>::min();
-	constexpr int32_t up_lim = std::numeric_limits<int32_t>::max();
+	constexpr int32_t LOW_LIM = std::numeric_limits<int32_t>::min();
+	constexpr int32_t UP_LIM = std::numeric_limits<int32_t>::max();
 
-	std::cout << "Please enter 3 integer numbers in range [" << low_lim << ".." << up_lim << "] (use space as separator)" << std::endl;
+	std::cout << "Please enter 3 integer numbers in range [" << LOW_LIM << ".." << UP_LIM << "] (use space as separator)" << std::endl;
 
 	int64_t a, b, c;
 
 	std::cin >> a >> b >> c;
 
-	if (((a > up_lim) || (b > up_lim) || (c > up_lim)) || ((a < low_lim) || (b < low_lim) || (c < low_lim))) {
+	if (((a > UP_LIM) || (b > UP_LIM) || (c > UP_LIM)) || ((a < LOW_LIM) || (b < LOW_LIM) || (c < LOW_LIM))) {
 		std::cout << "You entered an incorrect number, try again and follow the instructions" << std::endl;
 		return 0;
 	}
