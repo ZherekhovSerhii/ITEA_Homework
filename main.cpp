@@ -18,17 +18,17 @@ int main(int argc, char const *argv[]) {
 
   std::cin >> a >> b >> c;
 
-  if ((a>UP_LIM)||(a<LOW_LIM)) {
+  if ((a > UP_LIM) || (a < LOW_LIM)) {
     std::cout << "You entered an incorrect number for 'a' coefficient, try again and follow the instructions" << std::endl;
     return 0;
   }
 
-  if ((b>UP_LIM) || (b<LOW_LIM)) {
+  if ((b > UP_LIM) || (b < LOW_LIM)) {
     std::cout << "You entered an incorrect number for 'b' coefficient, try again and follow the instructions" << std::endl;
     return 0;
   }
 
-  if ((c>UP_LIM) || (c<LOW_LIM)) {
+  if ((c > UP_LIM) || (c < LOW_LIM)) {
     std::cout << "You entered an incorrect number for 'c' coefficient, try again and follow the instructions" << std::endl;
     return 0;
   }
@@ -38,8 +38,7 @@ int main(int argc, char const *argv[]) {
     return 0;
   }
 	
-  int64_t D;
-  D = (int64_t)pow(b, 2) - FOUR * a * c;
+  int64_t D = static_cast<int64_t>(pow(b, 2)) - FOUR * a * c;;
     
   if (D > 0) {
     auto x1 = ((-b) + sqrt(D)) / (TWO * a);
