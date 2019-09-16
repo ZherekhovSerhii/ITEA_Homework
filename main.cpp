@@ -14,31 +14,37 @@ int main(int argc, char const *argv[]) {
 	    << LOW_LIM << ".." << UP_LIM
 	    << "] \n(use space as separator)" << std::endl;
 
-  int64_t a, b, c;
-
-  std::cin >> a >> b >> c;
-
+  int64_t a;
+  std::cout << "a = ";
+  std::cin >> a;
   if ((a > UP_LIM) || (a < LOW_LIM)) {
-    std::cout << "You entered an incorrect number for 'a' coefficient, try again and follow the instructions" << std::endl;
+    std::cout << "You entered an incorrect number for 'a' coefficient," << std::endl;
+    std::cout << "try again and follow the instructions" << std::endl;
     return 0;
-  }
-
-  if ((b > UP_LIM) || (b < LOW_LIM)) {
-    std::cout << "You entered an incorrect number for 'b' coefficient, try again and follow the instructions" << std::endl;
-    return 0;
-  }
-
-  if ((c > UP_LIM) || (c < LOW_LIM)) {
-    std::cout << "You entered an incorrect number for 'c' coefficient, try again and follow the instructions" << std::endl;
-    return 0;
-  }
-
-  if (a == 0) {
+  } else if (a == 0) {
     std::cout << "Dividing by zero error" << std::endl;
     return 0;
   }
+
+  int64_t b;
+  std::cout << "b = ";
+  std::cin >> b;
+  if ((b > UP_LIM) || (b < LOW_LIM)) {
+    std::cout << "You entered an incorrect number for 'b' coefficient," << std::endl;
+    std::cout << "try again and follow the instructions" << std::endl;
+    return 0;
+  }
+
+  int64_t c;
+  std::cout << "c = ";
+  std::cin >> c;
+  if ((c > UP_LIM) || (c < LOW_LIM)) {
+    std::cout << "You entered an incorrect number for 'c' coefficient," << std::endl;
+    std::cout << "try again and follow the instructions" << std::endl;
+    return 0;
+  }
 	
-  int64_t D = static_cast<int64_t>(pow(b, 2)) - FOUR * a * c;;
+  int64_t D = b * b - FOUR * a * c;;
     
   if (D > 0) {
     auto x1 = ((-b) + sqrt(D)) / (TWO * a);
