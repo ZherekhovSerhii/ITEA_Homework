@@ -170,7 +170,9 @@ int move(const char *line) {
   }
 }
 
-void cut(char *buff, const unsigned int length) {
+void cut(char *buff, char *copybuff, const unsigned int length) {
+  copy(buff, copybuff, length);
+  buff += length;
   while (*buff != '\0') {
     *(buff - length) = *buff;
     *buff = 0;
@@ -234,7 +236,8 @@ int main(int argc, char *argv[]) {
     } break;
 
     case CUT: {
-      cut((buff + selectcursor + length), length);
+      clear(copybuff);
+      cut((buff + selectcursor), copybuff, length);
       if (static_cast<signed int>(cursor - length) >= 0)
         cursor -= length;
       else
